@@ -1,0 +1,73 @@
+{
+  "name": "auto-log",
+  "displayName": "auto_log",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Auto Log",
+      "properties": {
+        "autoLog.includeUnstaged": {
+          "type": "boolean",
+          "default": false,
+          "description": "Incluir mudanças não preparadas (unstaged) nos commits."
+        },
+        "autoLog.repositoryName": {
+          "type": "string",
+          "default": "auto-log",
+          "description": "Nome do repositório onde os commits serão enviados."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "auto-log.start",
+        "title": "Start Code-Tracking"
+      },
+      {
+        "command": "auto-log.toggleAutoCommitMode",
+        "title": "Auto Commits IA"
+      },
+      {
+        "command": "auto-log.history",
+        "title": "Log History"
+      },
+      {
+        "command": "auto-log.toggleMultiRepo",
+        "title": "Auto-Log: Alternar Modo Multi-Repo"
+      },
+      {
+        "command": "auto-log.exportLogs",
+        "title": "Auto-Log: Exportar Logs para CSV"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/node-fetch": "2.6.12",
+    "@types/vscode": "^1.97.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.86.2",
+    "simple-git": "^3.27.0"
+  }
+}
